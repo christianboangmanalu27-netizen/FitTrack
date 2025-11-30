@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="kuning">#FFB200</color>
+    <color name="kuning2">#FFE5A9</color>
+    <color name="kuning3">#FFF4DB</color>
 </resources>

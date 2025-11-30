@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "797102997593",
+    "firebase_url": "https://fittrack-24b36-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fittrack-24b36",
+    "storage_bucket": "fittrack-24b36.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797102997593:android:99d0d1d7546e958274f148",
+        "android_client_info": {
+          "package_name": "com.jonathan.fittrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZxS_zUbB9xBx4oOPOSQhStLgalAI2MjI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

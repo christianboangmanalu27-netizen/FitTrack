@@ -1,25 +1,25 @@
 package com.jonathan.fittrack
 
-import android.content.Intent // Tambahkan import ini
 import android.os.Bundle
 import android.widget.Toast // Tambahkan import ini
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.jonathan.fittrack.databinding.ActivityMain2Binding // Import View Binding
+import com.jonathan.fittrack.databinding.ActivityLoginBinding // Import View Binding
 
-class MainActivity2 : AppCompatActivity() {
+class Login : AppCompatActivity() {
 
     // Deklarasikan variabel binding
-    private lateinit var binding: ActivityMain2Binding
+    private lateinit var binding: ActivityLoginBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge() // Tetap aktifkan edge-to-edge
 
         // Langkah 1: Inflate layout menggunakan View Binding
-        binding = ActivityMain2Binding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
 
         // Langkah 2: Set content view menggunakan root dari binding
         setContentView(binding.root) // Ini menggantikan R.layout.activity_main2
