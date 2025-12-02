@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_categories_lengkap">
+
+    <!-- ========== HEADER ========== -->
+
+    <!-- ========== SEARCH SECTION ========== -->
+
+    <!-- Checkbox Beginner -->
+
+    <!-- Checkbox Intermediate -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="147dp"
+        android:layout_marginEnd="299dp"
+        android:text="Beginner"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <!-- Checkbox Expert -->
+
+    <TextView
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="146dp"
+        android:text="Intermediate"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <!-- ========== DIVIDER LINE ========== -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="60dp"
+        android:text="Expert"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="310dp"/>
+
+    <!-- ========== STRENGTH CARD ========== -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginEnd="275dp"
+        android:text="Strength"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="262dp"
+        android:layout_marginEnd="204dp"
+        android:text="24 Workouts Progress"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+
+    <!-- Strength Click Area -->
+
+    <!-- ========== ENDURANCE CARD ========== -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="360dp"
+        android:text="Endurance"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="204dp"
+        android:text="18 Workouts Progress"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+
+    <!-- Endurance Click Area -->
+
+    <!-- ========== AGILITY CARD ========== -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="484dp"
+        android:text="Agility"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="520dp"
+        android:text="15 Workouts Progress"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+
+    <!-- Agility Click Area -->
+
+    <!-- ========== MOBILITY CARD ========== -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="612dp"
+        android:text="Mobility"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="643dp"
+        android:text="10 Workouts Progress"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+
+    <!-- Mobility Click Area -->
+
+    <!-- ========== BOTTOM NAVIGATION ========== -->
+
+    <!-- Home Button -->
+
+    <!-- Search Button -->
+
+    <!-- Categories Button -->
+
+    <!-- Account Button -->
+
+</RelativeLayout>

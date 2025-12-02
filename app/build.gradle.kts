@@ -40,6 +40,10 @@ android {
 }
 
 dependencies {
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+// Untuk Bottom Navigation View dan Card View
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.cardview:cardview:1.0.0")
 
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
 

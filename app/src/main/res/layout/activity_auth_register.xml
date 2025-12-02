@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -11,25 +12,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ======================================= -->
-        <!-- =============== HEADER ================= -->
-        <!-- ======================================= -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="#FFC107">
 
-            <!-- Tombol Back -->
             <ImageView
                 android:id="@+id/btnBack"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
+                android:layout_marginEnd="366dp"
+                android:layout_marginBottom="151dp"
+                android:contentDescription="Tombol Kembali"
                 android:src="@drawable/arrow_back"
                 android:tint="@android:color/white" />
 
-            <!-- Judul -->
             <TextView
                 android:id="@+id/tvSignUp"
                 android:layout_width="wrap_content"
@@ -43,10 +46,6 @@
         </RelativeLayout>
 
 
-        <!-- ======================================= -->
-        <!-- ======== CARD FORM (RADIUS LEFT) ======== -->
-        <!-- ======================================= -->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,8 +55,8 @@
             android:paddingTop="35dp"
             android:paddingBottom="40dp">
 
-            <!-- First Name -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -70,13 +69,13 @@
                 app:boxCornerRadiusBottomEnd="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputFirstName"
+                    android:id="@+id/edtFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Last Name -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -89,33 +88,34 @@
                 app:boxCornerRadiusBottomEnd="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputLastName"
+                    android:id="@+id/edtLastName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Email -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="Email"
+                android:orientation="horizontal"
                 app:boxBackgroundMode="outline"
-                app:boxStrokeColor="#C4C4C4"
-                app:boxCornerRadiusTopStart="12dp"
-                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
                 app:boxCornerRadiusBottomStart="12dp"
-                app:boxCornerRadiusBottomEnd="12dp">
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxStrokeColor="#C4C4C4">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputEmail"
+                    android:id="@+id/edtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Password -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -129,14 +129,14 @@
                 app:boxCornerRadiusBottomEnd="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputPassword"
+                    android:id="@+id/edtPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Confirm Password -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="28dp"
@@ -150,13 +150,12 @@
                 app:boxCornerRadiusBottomEnd="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputConfirmPassword"
+                    android:id="@+id/edtConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Button Sign Up -->
             <Button
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
@@ -169,7 +168,6 @@
                 android:gravity="center"
                 android:background="@drawable/btn_black_round" />
 
-            <!-- Already have account -->
             <TextView
                 android:id="@+id/tvAlreadyAccount"
                 android:layout_width="wrap_content"
