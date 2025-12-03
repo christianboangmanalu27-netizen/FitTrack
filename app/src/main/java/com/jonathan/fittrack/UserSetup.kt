@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.jonathan.fittrack.databinding.ActivityUserSetupBinding // Pastikan Binding Class sesuai dengan UserSetup
+import com.jonathan.fittrack.databinding.ActivityUserSetupBinding
 
 class UserSetup : AppCompatActivity() {
 
@@ -18,11 +18,9 @@ class UserSetup : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // Setup Binding
         binding = ActivityUserSetupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Setup Insets (untuk tampilan full screen)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,7 +28,6 @@ class UserSetup : AppCompatActivity() {
         }
 
         binding.btnNext.setOnClickListener {
-            // Ambil input dari tiga kolom
             val berat = binding.edtWeight.text.toString()
             val tinggi = binding.edtHeight.text.toString()
             val umur = binding.edtAge.text.toString()
@@ -39,35 +36,36 @@ class UserSetup : AppCompatActivity() {
                 Toast.makeText(this, "Mohon isi semua data ya!", Toast.LENGTH_SHORT).show()
             } else {
 
-                // Konversi data ke angka untuk validasi dasar
                 val weight = berat.toDoubleOrNull()
                 val height = tinggi.toIntOrNull()
                 val age = umur.toIntOrNull()
 
                 if (weight == null || height == null || age == null || weight <= 0 || height <= 0 || age <= 0) {
-                    Toast.makeText(this, "Data harus berupa angka yang valid (lebih dari nol)", Toast.LENGTH_LONG).show()
-                    return@setOnClickListener // Berhenti jika ada data tidak valid
+                    Toast.makeText(this, "Data harus berupa angka valid (> 0)", Toast.LENGTH_LONG).show()
+                    return@setOnClickListener
                 }
 
-                // --- SIMPAN DATA KE MEMORI HP (SharedPreferences) ---
+                // Simpan Data
                 val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
 
-                // Simpan data
                 editor.putString("WEIGHT", berat)
                 editor.putString("HEIGHT", tinggi)
                 editor.putString("AGE", umur)
-                editor.putBoolean("HAS_FILLED_DATA", true) // Penanda
+                editor.putBoolean("HAS_FILLED_DATA", true)
 
                 editor.apply()
 
-                Toast.makeText(this, "Data tersimpan! Mempersiapkan Home.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Data tersimpan! Masuk ke Home.", Toast.LENGTH_SHORT).show()
 
-                // --- PINDAH KE HOME ---
-                // TODO: Ganti HomeActivity dengan nama Activity halaman utama kamu!
-                // val intent = Intent(this, HomeActivity::class.java)
-                // startActivity(intent)
-                // finish()
+                // === PERUBAHAN DI SINI ===
+                // Pindah ke MainActivity (Home Page)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+
+                // finishAffinity() berguna supaya kalau user tekan tombol BACK di HP,
+                // aplikasi langsung keluar (tidak balik ke halaman setup/login lagi)
+                finishAffinity()
             }
         }
     }
