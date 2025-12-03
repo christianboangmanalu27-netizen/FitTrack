@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Categories">
+
+    <!-- ================ SCROLL CONTENT ================ -->
+    <ScrollView
+        android:id="@+id/scrollCategories"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- HEADER: Back + Title -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Back pakai ikon teks biar tanpa drawable baru -->
+                <TextView
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="←"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Categories"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <!-- Spacer kanan biar title tetap center -->
+                <View
+                    android:layout_width="22sp"
+                    android:layout_height="0dp" />
+            </LinearLayout>
+
+
+            <!-- SEARCH BAR -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#F1F3F6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_search" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Search"
+                        android:textColor="#B0B0B0"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- FILTER CHIPS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp">
+
+                <!-- Beginner -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Beginner"
+                        android:textSize="13sp"
+                        android:textColor="#000000" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- Intermediate -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Intermediate"
+                        android:textSize="13sp"
+                        android:textColor="#000000" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- Expert -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="#FFFFFF">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Expert"
+                        android:textSize="13sp"
+                        android:textColor="#000000" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+            <!-- CATEGORY CARD 1 : Strength -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#9AD0FF">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Strength"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="24 Workouts Progress"
+                            android:textSize="13sp"
+                            android:textColor="#333333" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/strengh2" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- CATEGORY CARD 2 : Endurance -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#CFA9FF">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Endurance"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="18 Workouts Progress"
+                            android:textSize="13sp"
+                            android:textColor="#333333" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/endurance" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- CATEGORY CARD 3 : Agility -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFB3D1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Agility"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="15 Workouts Progress"
+                            android:textSize="13sp"
+                            android:textColor="#333333" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/agility" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- CATEGORY CARD 4 : Mobility -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#F5B39B">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mobility"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10 Workouts Progress"
+                            android:textSize="13sp"
+                            android:textColor="#333333" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mobility" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- ================ BOTTOM NAV (SAMA SEPERTI MAIN, CATEGORIES AKTIF) ================ -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- HOME -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_home_outline"
+                app:tint="#000000"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:text="Home"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- SEARCH -->
+        <LinearLayout
+            android:id="@+id/navSearch"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_search"
+                app:tint="#000000"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:text="Search"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- CATEGORIES (ACTIVE) -->
+        <LinearLayout
+            android:id="@+id/navCategories"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_categories"
+                app:tint="#F5A300"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:text="Categories"
+                android:textSize="12sp"
+                android:textColor="#F5A300"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- ACCOUNT -->
+        <LinearLayout
+            android:id="@+id/navAccount"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_account"
+                app:tint="#000000"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:text="Account"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

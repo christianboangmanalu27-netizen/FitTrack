@@ -22,11 +22,11 @@ class WelcomeScreen : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        // Intent tombol login ke LoginActivity
         binding.btnLogin.setOnClickListener {
             startActivity(Intent(this, Login::class.java))
         }
-
+        // Intent tombol register ke RegisterActivity
         binding.btnRegister.setOnClickListener {
             startActivity(Intent(this, Register::class.java))
         }

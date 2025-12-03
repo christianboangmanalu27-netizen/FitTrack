@@ -8,11 +8,14 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/logo"
+        android:icon="@mipmap/logo_foreground"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitTrack">
+        <activity
+            android:name=".Categories"
+            android:exported="false" />
         <activity
             android:name=".FragmentActivty"
             android:exported="false" />

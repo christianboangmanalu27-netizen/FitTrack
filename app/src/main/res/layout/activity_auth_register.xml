@@ -17,22 +17,6 @@
             android:layout_height="200dp"
             android:background="#FFC107">
 
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="366dp"
-                android:layout_marginBottom="151dp"
-                android:contentDescription="Tombol Kembali"
-                android:src="@drawable/arrow_back"
-                android:tint="@android:color/white" />
-
             <TextView
                 android:id="@+id/tvSignUp"
                 android:layout_width="wrap_content"
@@ -160,7 +144,7 @@
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:backgroundTint="#000000"
+                android:backgroundTint="@color/kuning"
                 android:text="Sign Up"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"

@@ -31,7 +31,7 @@ class Register : AppCompatActivity() {
         }
 
         // Tombol Back (di header atas)
-        binding.btnBack.setOnClickListener { finish() }
+
 
         // --- TOMBOL SIGN UP (SIMPAN DATA KE MEMORI HP) ---
         binding.btnSignUp.setOnClickListener {

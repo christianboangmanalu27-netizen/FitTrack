@@ -7,16 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeScreen">
 
-    <!-- Gambar Besar -->
+    <!-- Guideline untuk menempatkan teks & tombol -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_text_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.60"
+        android:orientation="horizontal" />
+
+    <!-- Gambar -->
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="366dp"
-        android:layout_height="496dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:srcCompat="@drawable/welcomefittrack"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="1:1.25"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="-19dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guide_text_top" />
 
     <!-- LET'S -->
     <TextView
@@ -26,10 +35,10 @@
         android:text="Let’s"
         android:textSize="48sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/guide_text_top"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="446dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp" />
 
     <!-- GET STARTED -->
     <TextView
@@ -39,10 +48,8 @@
         android:text="Get Started"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="500dp" />
+        app:layout_constraintTop_toBottomOf="@id/textView5"
+        app:layout_constraintStart_toStartOf="@id/textView5" />
 
     <!-- SUBTEXT -->
     <TextView
@@ -51,43 +58,36 @@
         android:layout_height="wrap_content"
         android:text="everything start from here"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="94dp"
-        android:layout_marginTop="564dp" />
+        app:layout_constraintStart_toStartOf="@id/textView6"
+        app:layout_constraintTop_toBottomOf="@id/textView6"
+        android:layout_marginTop="8dp" />
 
     <!-- BUTTON LOGIN -->
-
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="288dp"
+        android:layout_width="0dp"
         android:layout_height="51dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
         android:backgroundTint="#FFB200"
         android:text="Log In"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintTop_toBottomOf="@id/textView7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView7" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="48dp" />
 
+    <!-- BUTTON REGISTER -->
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="288dp"
+        android:layout_width="0dp"
         android:layout_height="51dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/black"
         android:text="Register"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView7" />
-
-    <!-- BUTTON REGISTER -->
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
