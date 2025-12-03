@@ -1,605 +1,612 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <!-- ===================== -->
+    <!-- SCROLLVIEW (SEMUA KODE ASLI KAMU DI DALAMNYA) -->
+    <!-- ===================== -->
+    <ScrollView
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_above="@+id/bottomNav">
 
-        <!-- ===================== -->
-        <!-- HEADER -->
-        <!-- ===================== -->
-
-        <!-- DATE -->
-
-        <TextView
-            android:id="@+id/txtHome"
-            android:layout_width="390dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:gravity="center"
-            android:text="HOME"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tue 04 Nov"
-            android:textColor="#A3A3A3"
-            android:textSize="12sp" />
-
-        <!-- GREETING -->
-        <TextView
-            android:id="@+id/txtGreeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Good  Morning (nama user)"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- ===================== -->
-        <!-- CALORIES CARD -->
-        <!-- ===================== -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardCalories"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="6dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="100dp">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="16dp"
+            <!-- ===================== -->
+            <!-- HEADER -->
+            <!-- ===================== -->
+
+            <TextView
+                android:id="@+id/txtHome"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="HOME"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tue 04 Nov"
+                android:textColor="#A3A3A3"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Good  Morning (nama user)"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- ===================== -->
+            <!-- CALORIES CARD -->
+            <!-- ===================== -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCalories"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="6dp">
 
-                <!-- TITLE -->
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical">
+                    android:layout_height="match_parent">
 
-                    <ImageView
-                        android:src="@drawable/ic_fire"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp" />
-
-                    <TextView
-                        android:id="@+id/tvCalories"
-                        android:layout_width="wrap_content"
+                    <!-- TITLE -->
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Calories"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginStart="8dp" />
+                        android:gravity="center_vertical">
 
-                    <TextView
-                        android:id="@+id/tvWeek"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Week  ▾"
-                        android:textSize="14sp"
-                        android:textColor="#777"
-                        android:gravity="end" />
+                        <ImageView
+                            android:src="@drawable/ic_fire"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp" />
+
+                        <TextView
+                            android:id="@+id/tvCalories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calories"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvWeek"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Week  ▾"
+                            android:textSize="14sp"
+                            android:textColor="#777"
+                            android:gravity="end" />
+
+                    </LinearLayout>
+
+                    <!-- BAR CHART -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:orientation="horizontal"
+                        android:gravity="bottom|center_horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <!-- SUN -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="20dp"
+                                android:background="#E6E6E6" />
+
+                            <TextView
+                                android:text="Sun"
+                                android:textSize="11sp"
+                                android:gravity="center"
+                                android:layout_marginTop="4dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+
+                        <!-- MON -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="28dp"
+                                android:background="#E6E6E6" />
+
+                            <TextView
+                                android:text="Mon"
+                                android:textSize="11sp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <!-- TUE ACTIVE -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <View
+                                android:layout_width="18dp"
+                                android:layout_height="42dp"
+                                android:background="#FFB200" />
+
+                            <TextView
+                                android:text="Tue"
+                                android:textSize="11sp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <!-- WED -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="30dp"
+                                android:background="#E6E6E6" />
+
+                            <TextView
+                                android:text="Wed"
+                                android:textSize="11sp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <!-- THU -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="26dp"
+                                android:background="#E6E6E6" />
+
+                            <TextView
+                                android:text="Thu"
+                                android:textSize="11sp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <!-- FRI -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="24dp"
+                                android:background="#E6E6E6" />
+
+                            <TextView
+                                android:text="Fri"
+                                android:textSize="11sp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <!-- SAT -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <View
+                                android:layout_width="14dp"
+                                android:layout_height="18dp"
+                                android:background="#E6E6E6" />
+
+                            <TextView
+                                android:text="Sat"
+                                android:textSize="11sp"
+                                android:gravity="center"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <!-- BAR CHART -->
+            </androidx.cardview.widget.CardView>
+
+            <!-- ===================== -->
+            <!-- FEATURED PLAN -->
+            <!-- ===================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:text="Featured Plan"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:text="See all"
+                    android:textSize="14sp"
+                    android:textColor="#A3A3A3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- ===================== -->
+            <!-- FEATURED SCROLL -->
+            <!-- ===================== -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="no"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:layout_marginTop="12dp">
+
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
                     android:orientation="horizontal"
-                    android:gravity="bottom|center_horizontal"
-                    android:layout_marginTop="8dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                    <!-- Repeat bars -->
+                    <ImageView
+                        android:src="@drawable/yoga"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="12dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/rounded_white"/>
+
+                    <ImageView
+                        android:src="@drawable/kardio"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginEnd="12dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/rounded_white"/>
+
+                    <ImageView
+                        android:src="@drawable/strength"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/rounded_white"/>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- ===================== -->
+            <!-- WEEKLY CHALLENGES -->
+            <!-- ===================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:text="Weekly Challenges"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:text="See all"
+                    android:textSize="14sp"
+                    android:textColor="#A3A3A3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:contentDescription="no"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <!-- CARD 1 -->
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        android:gravity="bottom|center_horizontal"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_yellow"
+                        android:padding="12dp"
+                        android:layout_marginEnd="12dp">
 
-                        <View
-                            android:layout_width="14dp"
-                            android:layout_height="20dp"
-                            android:background="#E6E6E6" />
+                        <ImageView
+                            android:src="@drawable/yoga"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop" />
 
                         <TextView
-                            android:text="Sun"
-                            android:textSize="11sp"
-                            android:gravity="center"
-                            android:layout_marginTop="4dp"
+                            android:text="5K Run Challenge - Join Now!"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:layout_marginTop="8dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                     </LinearLayout>
 
-                    <!-- MON -->
+                    <!-- CARD 2 -->
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:orientation="vertical"
-                        android:gravity="bottom|center_horizontal">
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_yellow"
+                        android:padding="12dp">
 
-                        <View
-                            android:layout_width="14dp"
-                            android:layout_height="28dp"
-                            android:background="#E6E6E6" />
+                        <ImageView
+                            android:src="@drawable/kardio"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop" />
 
                         <TextView
-                            android:text="Mon"
-                            android:textSize="11sp"
-                            android:gravity="center"
+                            android:text="30 Day Plank – Start Today"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:layout_marginTop="8dp"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
+                            android:layout_height="wrap_content"/>
                     </LinearLayout>
-
-                    <!-- TUE (ACTIVE) -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="bottom|center_horizontal">
-
-                        <View
-                            android:layout_width="18dp"
-                            android:layout_height="42dp"
-                            android:background="#FFB200" />
-
-                        <TextView
-                            android:text="Tue"
-                            android:textSize="11sp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                    <!-- WED -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="bottom|center_horizontal">
-
-                        <View
-                            android:layout_width="14dp"
-                            android:layout_height="30dp"
-                            android:background="#E6E6E6" />
-
-                        <TextView
-                            android:text="Wed"
-                            android:textSize="11sp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </LinearLayout>
-
-                    <!-- THU -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="bottom|center_horizontal">
-
-                        <View
-                            android:layout_width="14dp"
-                            android:layout_height="26dp"
-                            android:background="#E6E6E6" />
-
-                        <TextView
-                            android:text="Thu"
-                            android:textSize="11sp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </LinearLayout>
-
-
-                    <!-- FRI -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="bottom|center_horizontal">
-
-                        <View
-                            android:layout_width="14dp"
-                            android:layout_height="24dp"
-                            android:background="#E6E6E6" />
-
-                        <TextView
-                            android:text="Fri"
-                            android:textSize="11sp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </LinearLayout>
-
-
-                    <!-- SAT -->
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:gravity="bottom|center_horizontal">
-
-                        <View
-                            android:layout_width="14dp"
-                            android:layout_height="18dp"
-                            android:background="#E6E6E6" />
-
-                        <TextView
-                            android:text="Sat"
-                            android:textSize="11sp"
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </LinearLayout>
-
 
                 </LinearLayout>
+            </HorizontalScrollView>
 
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- ===================== -->
-        <!-- FEATURED PLAN -->
-        <!-- ===================== -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:text="Featured Plan"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:text="See all"
-                android:textSize="14sp"
-                android:textColor="#A3A3A3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-        <!-- FEATURED SCROLL -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="no"
-            android:overScrollMode="never"
-            android:scrollbars="none"
-            android:layout_marginTop="12dp">
-
+            <!-- ===================== -->
+            <!-- PROGRESS -->
+            <!-- ===================== -->
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:src="@drawable/yoga"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginEnd="12dp"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/rounded_white"/>
-
-                <ImageView
-                    android:src="@drawable/kardio"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_marginEnd="12dp"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/rounded_white"/>
-
-                <ImageView
-                    android:src="@drawable/strength"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/rounded_white"/>
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <!-- WEEKLY CHALLENGES -->
-        <!-- WEEKLY CHALLENGES HEADER -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
-
-            <TextView
-                android:text="Weekly Challenges"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:text="See all"
-                android:textSize="14sp"
-                android:textColor="#A3A3A3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-
-
-        <!-- WEEKLY CHALLENGE CARDS -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:contentDescription="no"
-            android:overScrollMode="never"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <!-- CARD 1 : 5K RUN -->
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_yellow"
-                    android:padding="12dp"
-                    android:layout_marginEnd="12dp">
-
-                    <ImageView
-                        android:src="@drawable/yoga"
-                        android:layout_width="match_parent"
-                        android:layout_height="110dp"
-                        android:scaleType="centerCrop" />
-
-                    <TextView
-                        android:text="5K Run Challenge - Join Now!"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        android:layout_marginTop="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-
-
-                <!-- CARD 2 : PLANK -->
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_yellow"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:src="@drawable/kardio"
-                        android:layout_width="match_parent"
-                        android:layout_height="110dp"
-                        android:scaleType="centerCrop" />
-
-                    <TextView
-                        android:text="30 Day Plank – Start Today"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:textColor="#000000"
-                        android:layout_marginTop="8dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <!-- YOUR PROGRESS -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp">
-
-            <TextView
-                android:text="Your Progress"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:text="See all"
-                android:textSize="14sp"
-                android:textColor="#A3A3A3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-
-
-        <!-- PROGRESS CARD -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_marginTop="12dp"
-            android:background="#FFB200"
-            app:cardCornerRadius="18dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="18dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="67.5KG"
-                    android:textColor="#0F0B0B"
-                    android:textSize="36sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:text="↓ 2.5kg this week"
-                    android:textSize="14sp"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="View History"
-                    android:textSize="14sp"
+                    android:text="Your Progress"
+                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="#0048FF"
-                    android:gravity="end"
-                    android:layout_marginTop="8dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:text="See all"
+                    android:textSize="14sp"
+                    android:textColor="#A3A3A3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="12dp"
+                android:background="#FFB200"
+                app:cardCornerRadius="18dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="18dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="67.5KG"
+                        android:textColor="#0F0B0B"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:text="↓ 2.5kg this week"
+                        android:textSize="14sp"
+                        android:textColor="#000000"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-        </androidx.cardview.widget.CardView>
-        <!-- BOTTOM NAVIGATION -->
-        <LinearLayout
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:gravity="center"
-            android:background="#FFFFFF"
-            android:elevation="8dp">
+                    <TextView
+                        android:text="View History"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#0048FF"
+                        android:gravity="end"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-            <!-- HOME -->
-            <LinearLayout
-                android:id="@+id/navHome"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
+                </LinearLayout>
 
-                <ImageView
-                    android:src="@drawable/ic_home_outline"
-                    app:tint="#F5A300"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp" />
+            </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:text="Home"
-                    android:textSize="14sp"
-                    android:textColor="#F5A300"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!-- SEARCH -->
-            <LinearLayout
-                android:id="@+id/navSearch"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:src="@drawable/ic_search"
-                    app:tint="#000000"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp" />
-
-                <TextView
-                    android:text="Search"
-                    android:textSize="14sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!-- CATEGORIES -->
-            <LinearLayout
-                android:id="@+id/navCategories"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:src="@drawable/ic_categories"
-                    app:tint="#000000"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp" />
-
-                <TextView
-                    android:text="Categories"
-                    android:textSize="14sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!-- ACCOUNT -->
-            <LinearLayout
-                android:id="@+id/navAccount"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:src="@drawable/ic_account"
-                    app:tint="#000000"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp" />
-
-                <TextView
-                    android:text="Account"
-                    android:textSize="14sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+            <!-- ===================== -->
+            <!-- END OF ORIGINAL CONTENT -->
+            <!-- ===================== -->
 
         </LinearLayout>
 
+    </ScrollView>
+
+    <!-- ===================== -->
+    <!-- FIXED BOTTOM NAVIGATION -->
+    <!-- ===================== -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <!-- HOME -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_home_outline"
+                app:tint="#F5A300"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:text="Home"
+                android:textSize="14sp"
+                android:textColor="#F5A300"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- SEARCH -->
+        <LinearLayout
+            android:id="@+id/navSearch"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_search"
+                app:tint="#000000"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:text="Search"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- CATEGORIES -->
+         <LinearLayout
+            android:id="@+id/navCategories"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_categories"
+                app:tint="#000000"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:text="Categories"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- ACCOUNT -->
+        <LinearLayout
+            android:id="@+id/navAccount"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_account"
+                app:tint="#000000"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:text="Account"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </LinearLayout>
 
-</ScrollView>
+</RelativeLayout>

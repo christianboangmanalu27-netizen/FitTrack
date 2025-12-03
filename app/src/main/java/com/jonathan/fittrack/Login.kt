@@ -19,7 +19,6 @@ class Login : AppCompatActivity() {
         enableEdgeToEdge()
 
         // Setup Binding
-        // Kalo ini masih merah, pastikan nama file XML layout kamu adalah: activity_login.xml
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -30,7 +29,9 @@ class Login : AppCompatActivity() {
             insets
         }
 
-        // --- LOGIKA TOMBOL LOGIN (DENGAN "FAKE DATABASE") ---
+        // =============================
+        //   LOGIKA TOMBOL LOGIN
+        // =============================
         binding.btnLogin.setOnClickListener {
             val inputEmail = binding.edtEmail.text.toString()
             val inputPassword = binding.edtPassword.text.toString()
@@ -38,35 +39,48 @@ class Login : AppCompatActivity() {
             // 1. Cek apakah kolom kosong
             if (inputEmail.isEmpty() || inputPassword.isEmpty()) {
                 Toast.makeText(this, "Email dan Password harus diisi!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            // Ambil data user yg tersimpan dari Register
+            val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+            val userEmail = sharedPreferences.getString("EMAIL", null)
+            val userPassword = sharedPreferences.getString("PASSWORD", null)
+
+            // Default admin
+            val adminEmail = "admin@admin.com"
+            val adminPassword = "123456"
+
+            // Cek admin
+            val isAdmin = inputEmail == adminEmail && inputPassword == adminPassword
+
+            // Cek user
+            val isUser = inputEmail == userEmail && inputPassword == userPassword
+
+            if (isAdmin || isUser) {
+                // LOGIN BERHASIL
+                Toast.makeText(this, "Login Berhasil! Welcome.", Toast.LENGTH_SHORT).show()
+
+                // Simpan status login
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("IS_LOGGED_IN", true)
+                editor.apply()
+
+                // =============================
+                //  INTENT KE MAIN ACTIVITY
+                // =============================
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
             } else {
-                // 2. Ambil data yang tersimpan di "UserPrefs" (dari hasil Register nanti)
-                val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-                val registeredEmail = sharedPreferences.getString("EMAIL", "admin@admin.com") // Default admin
-                val registeredPassword = sharedPreferences.getString("PASSWORD", "123456")   // Default password
-
-                // 3. Cek Kecocokan Data
-                if (inputEmail == registeredEmail && inputPassword == registeredPassword) {
-                    // BERHASIL LOGIN
-                    Toast.makeText(this, "Login Berhasil! Welcome.", Toast.LENGTH_SHORT).show()
-
-                    // Simpan status login (biar sistem tau user lagi aktif)
-                    val editor = sharedPreferences.edit()
-                    editor.putBoolean("IS_LOGGED_IN", true)
-                    editor.apply()
-
-                    // Pindah ke Halaman Selanjutnya (Input Data / Onboarding)
-                    // Pastikan kamu sudah buat Activity InputDataActivity (kalau belum, ganti ke HomeActivity)
-                    // val intent = Intent(this, InputDataActivity::class.java)
-                    // startActivity(intent)
-                    // finish()
-                } else {
-                    // GAGAL LOGIN
-                    Toast.makeText(this, "Email atau Password salah!", Toast.LENGTH_SHORT).show()
-                }
+                // LOGIN GAGAL
+                Toast.makeText(this, "Email atau Password salah!", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // --- TEKS SIGN UP ---
+        // =============================
+        //     TEKS "SIGN UP"
+        // =============================
         binding.tvSignUp.setOnClickListener {
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
