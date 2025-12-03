@@ -58,13 +58,9 @@ class UserSetup : AppCompatActivity() {
 
                 Toast.makeText(this, "Data tersimpan! Masuk ke Home.", Toast.LENGTH_SHORT).show()
 
-                // === PERUBAHAN DI SINI ===
                 // Pindah ke MainActivity (Home Page)
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-
-                // finishAffinity() berguna supaya kalau user tekan tombol BACK di HP,
-                // aplikasi langsung keluar (tidak balik ke halaman setup/login lagi)
                 finishAffinity()
             }
         }

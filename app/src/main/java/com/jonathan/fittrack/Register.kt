@@ -18,22 +18,15 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // --- Setup Binding ---
-        // Kalo ini merah, coba: Build -> Clean Project & Build -> Rebuild Project
         binding = ActivityAuthRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // --- Setup Insets (sudah menggunakan binding.root) ---
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Tombol Back (di header atas)
-
-
-        // --- TOMBOL SIGN UP (SIMPAN DATA KE MEMORI HP) ---
         binding.btnSignUp.setOnClickListener {
             // Ambil data dari ID yang baru di XML
             val namaDepan = binding.edtFirstName.text.toString()
@@ -56,7 +49,7 @@ class Register : AppCompatActivity() {
                 editor.putString("FULL_NAME", "$namaDepan $namaBelakang")
                 editor.putString("EMAIL", email)
                 editor.putString("PASSWORD", password)
-                editor.apply() // Simpan perubahan
+                editor.apply()
 
                 Toast.makeText(this, "Registrasi Berhasil! Silakan Login.", Toast.LENGTH_LONG).show()
 
@@ -67,7 +60,6 @@ class Register : AppCompatActivity() {
             }
         }
 
-        // Sudah punya akun? Pindah ke Login
         binding.tvAlreadyAccount.setOnClickListener { finish() }
     }
 }

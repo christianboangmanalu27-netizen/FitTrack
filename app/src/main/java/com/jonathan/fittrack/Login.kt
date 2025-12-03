@@ -36,29 +36,29 @@ class Login : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Ambil data user yang tersimpan dari Register
             val sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
             val userEmail = sharedPreferences.getString("EMAIL", null)
             val userPassword = sharedPreferences.getString("PASSWORD", null)
 
-            val adminEmail = "admin@admin.com"
-            val adminPassword = "123456"
-
-            val isAdmin = inputEmail == adminEmail && inputPassword == adminPassword
+            // Hanya perlu cek user biasa
             val isUser = inputEmail == userEmail && inputPassword == userPassword
 
-            if (isAdmin || isUser) {
+            if (isUser) {
+                // LOGIN BERHASIL
                 Toast.makeText(this, "Login Berhasil! Welcome.", Toast.LENGTH_SHORT).show()
 
+                // Simpan status login
                 val editor = sharedPreferences.edit()
                 editor.putBoolean("IS_LOGGED_IN", true)
                 editor.apply()
 
-                // === PERUBAHAN DI SINI ===
-                // Pindah ke UserSetup dulu untuk isi data BB/TB
+                // Pindah ke UserSetup
                 val intent = Intent(this, UserSetup::class.java)
                 startActivity(intent)
-                finish() // Tutup Login agar tidak bisa kembali
+                finish()
             } else {
+                // LOGIN GAGAL
                 Toast.makeText(this, "Email atau Password salah!", Toast.LENGTH_SHORT).show()
             }
         }
